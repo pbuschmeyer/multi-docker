@@ -13,7 +13,7 @@ after_success:
   - docker build -t pbuschmeyer/multi-nginx ./nginx
   - docker build -t pbuschmeyer/multi-server ./server
 # Log in to the docker CLI
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" -- password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 # take the images and push them to docker-cli
   - docker push pbuschmeyer/multi-client
   - docker push pbuschmeyer/multi-nginx
